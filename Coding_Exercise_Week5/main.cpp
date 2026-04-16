@@ -60,14 +60,24 @@ bool operator<=(PHANSO p, PHANSO q) {
     //Tu code
 }
 PHANSO operator+=(PHANSO& p, PHANSO q) {
-    //Tu code
+    p.tuSo = p.tuSo * q.mauSo + q.tuSo * p.mauSo;
+    p.mauSo = p.mauSo * q.mauSo;
+    return p;
 }
 PHANSO operator-=(PHANSO& p, PHANSO q) {
-    //Tu code
+    p.tuSo = p.tuSo * q.mauSo - q.tuSo * p.mauSo;
+    p.mauSo = p.mauSo * q.mauSo;
+    return p;
 }
 
 PHANSO findMax(PHANSO a[], int n) {
-    //Tu code
+    PHANSO max = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i].tuSo * max.mauSo > max.tuSo * a[i].mauSo) {
+            max = a[i];
+        }
+    }
+    return max;
 }
 PHANSO sumFrac(PHANSO a[], int n) {
     //Tu code
