@@ -52,24 +52,24 @@ PHANSO operator/(PHANSO p, PHANSO q) {
 }
 
 bool operator==(PHANSO p, PHANSO q) {
-    //Tu code
+    return (p.tuSo * q.mauSo == q.tuSo * p.mauSo);
 }
 
 bool operator!=(PHANSO p, PHANSO q) {
-    //Tu code
+   return (p.tuSo * q.mauSo != q.tuSo * p.mauSo);
 }
 bool operator>(PHANSO p, PHANSO q) {
-    //Tu code
+    return (p.tuSo * q.mauSo > q.tuSo * p.mauSo);
 }
 bool operator<(PHANSO p, PHANSO q) {
-    //Tu code
+    return (p.tuSo * q.mauSo < q.tuSo * p.mauSo);
 }
 bool operator>=(PHANSO p, PHANSO q) {
-	//Tu code
+	return (p > q || p == q);
 }
 
 bool operator<=(PHANSO p, PHANSO q) {
-    //Tu code
+   return (p < q || p == q);
 }
 PHANSO operator+=(PHANSO& p, PHANSO q) {
     p.tuSo = p.tuSo * q.mauSo + q.tuSo * p.mauSo;
