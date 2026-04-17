@@ -24,19 +24,31 @@ PHANSO simplify(PHANSO& p) {
 }
 
 PHANSO operator+(PHANSO p, PHANSO q) {
-	//Tu code
+    PHANSO res;
+    res.tuSo = p.tuSo * q.mauSo + q.tuSo * p.mauSo;
+    res.mauSo = p.mauSo * q.mauSo;
+    return simplify(res);
 }
 
 PHANSO operator-(PHANSO p, PHANSO q) {
-    //Tu code
+    PHANSO res;
+    res.tuSo = p.tuSo * q.mauSo - q.tuSo * p.mauSo;
+    res.mauSo = p.mauSo * q.mauSo;
+    return simplify(res);
 }
 
 PHANSO operator*(PHANSO p, PHANSO q) {
-    //Tu code
+    PHANSO res;
+    res.tuSo = p.tuSo * q.tuSo;
+    res.mauSo = p.mauSo * q.mauSo;
+    return simplify(res);
 }
 
 PHANSO operator/(PHANSO p, PHANSO q) {
-    //Tu code
+    PHANSO res;
+    res.tuSo = p.tuSo * q.mauSo;
+    res.mauSo = p.mauSo * q.tuSo;
+    return simplify(res);
 }
 
 bool operator==(PHANSO p, PHANSO q) {
