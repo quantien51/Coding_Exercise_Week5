@@ -92,10 +92,32 @@ PHANSO findMax(PHANSO a[], int n) {
     return max;
 }
 PHANSO sumFrac(PHANSO a[], int n) {
-    //Tu code
+    PHANSO sum;
+    sum.tuSo = 0;
+    sum.mauSo = 1;
+
+    for (int i = 0; i < n; i++) {
+        sum.tuSo = (sum.tuSo * a[i].mauSo) + (a[i].tuSo * sum.mauSo);
+        sum.mauSo = sum.mauSo * a[i].mauSo;
+
+        simplify(sum);
+    }
+
+    return sum;
 }
 void fractionSort(PHANSO a[], int n) {
-    //Tu code
+	for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            float val1 = (float)a[i].tuSo / a[i].mauSo;
+            float val2 = (float)a[j].tuSo / a[j].mauSo;
+
+            if (val1 = val2) {
+                PHANSO temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
 }
 
 void displayFraction(PHANSO frac) {
